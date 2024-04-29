@@ -1,118 +1,99 @@
-# Techniques of Machine Learning
+# Các kỹ thuật trong học máy
+Quá trình xây dựng, sử dụng và duy trì các mô hình machine learning cũng như dữ liệu chúng sử dụng là một quá trình rất khác so với nhiều quy trình phát triển khác. Trong bài học này, chúng tôi sẽ làm sáng tỏ quy trình và phác thảo các kỹ thuật chính mà bạn cần biết. Bạn sẽ:
 
-The process of building, using, and maintaining machine learning models and the data they use is a very different process from many other development workflows. In this lesson, we will demystify the process, and outline the main techniques you need to know. You will:
-
-- Understand the processes underpinning machine learning at a high level.
-- Explore base concepts such as 'models', 'predictions', and 'training data'.
-
-## [Pre-lecture quiz](https://gray-sand-07a10f403.1.azurestaticapps.net/quiz/7/)
+- Hiểu các quy trình làm nền tảng cho việc học máy ở mức độ cao.
+- Khám phá các khái niệm cơ bản như 'mô hình', 'dự đoán' và 'dữ liệu huấn luyện'.
 
 [![ML for beginners - Techniques of Machine Learning](https://img.youtube.com/vi/4NGM0U2ZSHU/0.jpg)](https://youtu.be/4NGM0U2ZSHU "ML for beginners - Techniques of Machine Learning")
 
-> 🎥 Click the image above for a short video working through this lesson.
+> 🎥 Nhấn ảnh trên để xem video của bài học này
 
-## Introduction
+## Giới thiệu
 
-On a high level, the craft of creating machine learning (ML) processes is comprised of a number of steps:
+Ở cấp độ cao, tạo quá trình học máy (ML) bao gồm một số bước:
 
-1. **Decide on the question**. Most ML processes start by asking a question that cannot be answered by a simple conditional program or rules-based engine. These questions often revolve around predictions based on a collection of data.
-2. **Collect and prepare data**. To be able to answer your question, you need data. The quality and, sometimes, quantity of your data will determine how well you can answer your initial question. Visualizing data is an important aspect of this phase. This phase also includes splitting the data into a training and testing group to build a model.
-3. **Choose a training method**. Depending on your question and the nature of your data, you need to choose how you want to train a model to best reflect your data and make accurate predictions against it. This is the part of your ML process that requires specific expertise and, often, a considerable amount of experimentation.
-4. **Train the model**. Using your training data, you'll use various algorithms to train a model to recognize patterns in the data. The model might leverage internal weights that can be adjusted to privilege certain parts of the data over others to build a better model.
-5. **Evaluate the model**. You use never before seen data (your testing data) from your collected set to see how the model is performing.
-6. **Parameter tuning**. Based on the performance of your model, you can redo the process using different parameters, or variables, that control the behavior of the algorithms used to train the model.
-7. **Predict**. Use new inputs to test the accuracy of your model.
+1. **Quyết định câu hỏi**. Vấn đề mà mô hình ML cần giải quyết
+2. **Thu thập và chuẩn bị dữ liệu**. Để có thể trả lời câu hỏi của bạn, bạn cần dữ liệu. Chất lượng và đôi khi số lượng dữ liệu của bạn sẽ quyết định mức độ bạn có thể trả lời câu hỏi ban đầu của mình. Trực quan hóa dữ liệu là một khía cạnh quan trọng của giai đoạn này. Giai đoạn này cũng bao gồm việc chia dữ liệu thành nhóm đào tạo (training) và thử nghiệm (testing) để xây dựng mô hình.
+3. **Chọn phương pháp huấn luyện**. Tùy thuộc vào câu hỏi và tính chất của dữ liệu, bạn cần chọn cách bạn muốn huấn luyện mô hình để phản ánh tốt nhất dữ liệu của mình và đưa ra dự đoán chính xác dựa trên dữ liệu đó. Đây là một phần trong quy trình ML của bạn đòi hỏi chuyên môn cụ thể và thường cần lượngthí nghiệm đáng kể.
+4. **Huấn luyện mô hình**. Khi sử dụng dữ liệu huấn luyện của mình, bạn sẽ sử dụng nhiều thuật toán khác nhau để huấn luyện mô hình nhằm nhận dạng các mẫu trong dữ liệu. Mô hình có thể tận dụng các trọng số bên trong có thể được điều chỉnh để ưu tiên một số phần dữ liệu nhất định so với các phần khác để xây dựng một mô hình tốt hơn.
+5. **Đánh giá mô hình**. Bạn sử dụng dữ liệu chưa từng thấy trước đây (dữ liệu thử nghiệm của bạn) từ bộ đã thu thập để đánh giá hiệu quả mô hình.
+6. **Điều chỉnh tham số**. Dựa trên hiệu suất của mô hình, bạn có thể lặp lại quy trình bằng cách sử dụng các tham số hoặc biến khác nhau để kiểm soát hành vi của các thuật toán được sử dụng để huấn luyện mô hình.
+7. **Dự đoán**. Sử dụng đầu vào mới để kiểm tra độ chính xác của mô hình của bạn.
 
-## What question to ask
+## Đặt vấn đề
 
-Computers are particularly skilled at discovering hidden patterns in data. This utility is very helpful for researchers who have questions about a given domain that cannot be easily answered by creating a conditionally-based rules engine. Given an actuarial task, for example, a data scientist might be able to construct handcrafted rules around the mortality of smokers vs non-smokers.
+Máy tính đặc biệt có khả năng phát hiện các mẫu ẩn trong dữ liệu. Điều này rất hữu ích cho các nhà nghiên cứu có câu hỏi về một miền nhất định mà không thể dễ dàng trả lời bằng cách tạo một công cụ quy tắc dựa trên điều kiện. Ví dụ: được giao một nhiệm vụ tính toán, một nhà khoa học dữ liệu có thể xây dựng các quy tắc thủ công xung quanh tỷ lệ tử vong của người hút thuốc so với người không hút thuốc.
 
-When many other variables are brought into the equation, however, a ML model might prove more efficient to predict future mortality rates based on past health history. A more cheerful example might be making weather predictions for the month of April in a given location based on data that includes latitude, longitude, climate change, proximity to the ocean, patterns of the jet stream, and more.
+Tuy nhiên, khi nhiều biến số khác được đưa vào phương trình, mô hình ML có thể tỏ ra hiệu quả hơn trong việc dự đoán tỷ lệ tử vong trong tương lai dựa trên lịch sử sức khỏe trong quá khứ. Một ví dụ thú vị hơn có thể là đưa ra dự đoán thời tiết cho tháng 4 ở một địa điểm nhất định dựa trên dữ liệu bao gồm vĩ độ, kinh độ, biến đổi khí hậu, vị trí gần biển, mô hình dòng phản lực, v.v.
 
-✅ This [slide deck](https://www2.cisl.ucar.edu/sites/default/files/2021-10/0900%20June%2024%20Haupt_0.pdf) on weather models offers a historical perspective for using ML in weather analysis.  
+✅ [Slide](https://www2.cisl.ucar.edu/sites/default/files/2021-10/0900%20 June%2024%20Haupt_0.pdf) về các mô hình thời tiết này cung cấp thông tin lịch sử về việc sử dụng ML trong phân tích thời tiết.
 
-## Pre-building tasks
+## Trước khi xây dựng mô hình
 
-Before starting to build your model, there are several tasks you need to complete. To test your question and form a hypothesis based on a model's predictions, you need to identify and configure several elements.
+Trước khi bắt đầu xây dựng mô hình của mình, có một số nhiệm vụ bạn cần phải hoàn thành. 
 
-### Data
+### Dữ liệu
 
-To be able to answer your question with any kind of certainty, you need a good amount of data of the right type. There are two things you need to do at this point:
+Để giải quyết vấn đề, bạn cần có một lượng lớn dữ liệu đúng loại. Có hai điều bạn cần làm vào thời điểm này:
 
-- **Collect data**. Keeping in mind the previous lesson on fairness in data analysis, collect your data with care. Be aware of the sources of this data, any inherent biases it might have, and document its origin.
-- **Prepare data**. There are several steps in the data preparation process. You might need to collate data and normalize it if it comes from diverse sources. You can improve the data's quality and quantity through various methods such as converting strings to numbers (as we do in [Clustering](../../5-Clustering/1-Visualize/README.md)). You might also generate new data, based on the original (as we do in [Classification](../../4-Classification/1-Introduction/README.md)). You can clean and edit the data (as we will prior to the [Web App](../../3-Web-App/README.md) lesson). Finally, you might also need to randomize it and shuffle it, depending on your training techniques.
+- **Thu thập dữ liệu**. Hãy ghi nhớ bài học trước về tính công bằng trong phân tích dữ liệu, hãy thu thập dữ liệu của bạn một cách cẩn thận. Hãy lưu ý đến nguồn của dữ liệu này, bất kỳ thành kiến cố hữu nào mà nó có thể có và ghi lại nguồn gốc của nó.
+- **Chuẩn bị dữ liệu**. Có một số bước trong quá trình chuẩn bị dữ liệu. Bạn có thể cần đối chiếu dữ liệu và chuẩn hóa dữ liệu nếu nó đến từ nhiều nguồn khác nhau. Bạn có thể cải thiện chất lượng và số lượng của dữ liệu thông qua nhiều phương pháp khác nhau, chẳng hạn như chuyển đổi chuỗi thành số (như chúng tôi thực hiện trong [chương Phân cụm](../../5-Clustering/1-Visualize/README.md)). Bạn cũng có thể tạo dữ liệu mới, dựa trên dữ liệu gốc (như chúng tôi thực hiện trong [chương Phân loại](../../4-Classification/1-Introduction/README.md)). Bạn có thể dọn dẹp và chỉnh sửa dữ liệu (như chúng tôi sẽ làm trước bài học [chương Web App](../../3-Web-App/README.md)). Cuối cùng, bạn cũng có thể cần phải chọn ngẫu nhiên và xáo trộn nó, tùy thuộc vào kỹ thuật huấn luyện của bạn.
 
-✅ After collecting and processing your data, take a moment to see if its shape will allow you to address your intended question. It may be that the data will not perform well in your given task, as we discover in our [Clustering](../../5-Clustering/1-Visualize/README.md) lessons!
+✅ Sau khi thu thập và xử lý dữ liệu của bạn, hãy dành chút thời gian để xem liệu hình dạng của dữ liệu có cho phép bạn giải quyết vấn đề không. Có thể dữ liệu sẽ không hoạt động tốt trong vấn đề của bạn, như chúng ta sẽ khám phá trong chương [Phân cụm](../../5-Clustering/1-Visualize/README.md)!
 
-### Features and Target
+### Đặc trưng và mục tiêu
 
-A [feature](https://www.datasciencecentral.com/profiles/blogs/an-introduction-to-variable-and-feature-selection) is a measurable property of your data. In many datasets it is expressed as a column heading like 'date' 'size' or 'color'. Your feature variable, usually represented as `X` in code, represent the input variable which will be used to train model.
+[Đặc trưng](https://www.datasciencecentral.com/profiles/blogs/an-introduction-to-variable-and-feature-selection) là thuộc tính có thể đo lường được trong dữ liệu của bạn. Trong nhiều bộ dữ liệu, nó được biểu thị dưới dạng tiêu đề cột như 'ngày' 'kích thước' hoặc 'màu sắc'. Biến đặc trưng của bạn, thường được biểu thị dưới dạng `X` trong mã, biểu thị biến đầu vào sẽ được sử dụng để huấn luyện mô hình.
 
-A target is a thing you are trying to predict. Target usually represented as `y` in code, represents the answer to the question you are trying to ask of your data: in December, what **color** pumpkins will be cheapest? in San Francisco, what neighborhoods will have the best real estate **price**? Sometimes target is also referred as label attribute.
+Mục tiêu là thứ bạn đang cố gắng dự đoán. Mục tiêu thường được biểu thị bằng `y` trong mã, thể hiện câu trả lời cho câu hỏi bạn đang cố gắng hỏi về dữ liệu của mình, chẳng hạn: vào tháng 12, quả bí ngô **màu** nào sẽ rẻ nhất? ở San Francisco, khu vực nào sẽ có giá bất động sản tốt nhất **? Đôi khi mục tiêu còn được gọi là thuộc tính nhãn.
 
-### Selecting your feature variable
+### Chọn biến đặc trưng của bạn
 
-🎓 **Feature Selection and Feature Extraction** How do you know which variable to choose when building a model? You'll probably go through a process of feature selection or feature extraction to choose the right variables for the most performant model. They're not the same thing, however: "Feature extraction creates new features from functions of the original features, whereas feature selection returns a subset of the features." ([source](https://wikipedia.org/wiki/Feature_selection))
+🎓 **Lựa chọn đặc điểm và trích xuất đặc điểm** Làm sao bạn biết nên chọn biến nào khi xây dựng mô hình? Có thể bạn sẽ trải qua quá trình chọn hay trích xuất đặc trưng để chọn các biến phù hợp cho mô hình hoạt động hiệu quả nhất. Tuy nhiên, chúng không giống nhau: "Trích xuất đặc trưng tạo ra các đặc trưng mới từ các chức năng của các đặc trưng ban đầu, trong khi lựa chọn tính đặc trưng trả về một tập hợp con các tính năng." ([nguồn](https://wikipedia.org/wiki/Feature_selection))
 
-### Visualize your data
+### Trực quan hóa dữ liệu của bạn
 
-An important aspect of the data scientist's toolkit is the power to visualize data using several excellent libraries such as Seaborn or MatPlotLib. Representing your data visually might allow you to uncover hidden correlations that you can leverage. Your visualizations might also help you to uncover bias or unbalanced data (as we discover in [Classification](../../4-Classification/2-Classifiers-1/README.md)).
+Một khía cạnh quan trọng trong bộ công cụ của nhà khoa học dữ liệu là khả năng trực quan hóa dữ liệu bằng cách sử dụng một số thư viện như Seaborn hoặc MatPlotLib. Việc trình bày dữ liệu của bạn một cách trực quan có thể cho phép bạn khám phá các mối tương quan ẩn mà bạn có thể tận dụng. Hình ảnh trực quan của bạn cũng có thể giúp bạn phát hiện ra dữ liệu sai lệch hoặc không cân bằng (như chúng tôi khám phá trong [Phân lớp](../../4-Classification/2-Classifiers-1/README.md)).
 
-### Split your dataset
+### Chia tập dữ liệu của bạn
 
-Prior to training, you need to split your dataset into two or more parts of unequal size that still represent the data well.
+Trước khi đào tạo, bạn cần chia tập dữ liệu của mình thành hai hoặc nhiều phần có kích thước lệch nhau mà vẫn thể hiện tốt dữ liệu.
 
-- **Training**. This part of the dataset is fit to your model to train it. This set constitutes the majority of the original dataset.
-- **Testing**. A test dataset is an independent group of data, often gathered from the original data, that you use to confirm the performance of the built model.
-- **Validating**. A validation set is a smaller independent group of examples that you use to tune the model's hyperparameters, or architecture, to improve the model. Depending on your data's size and the question you are asking, you might not need to build this third set (as we note in [Time Series Forecasting](../../7-TimeSeries/1-Introduction/README.md)).
+- **Tập huấn luyện** dùng để huấn luyện mô hình và thường chiếm phần lớn bộ dữ liệu (thường là 80%)
+- **Tập thử nghiệm** dùng để thử nghiệm mô hình đã học
+- **Tập tối ưu** dùng để tối ưu hóa tham số (nếu có)
+## Xây dựng mô hình
 
-## Building a model
+### Xác định phương pháp huấn luyện
 
-Using your training data, your goal is to build a model, or a statistical representation of your data, using various algorithms to **train** it. Training a model exposes it to data and allows it to make assumptions about perceived patterns it discovers, validates, and accepts or rejects.
+Bạn sẽ chọn phương pháp huấn luyện dựa vào vấn đề cần giải quyết và đặc điểm của bộ dữ liệu. [Scikit-learn](https://scikit-learn.org/stable/user_guide.html) cung cấp nhiều cách huấn luyện một mô hình. Tùy vào kinh nghiệm của bạn, bạn có thể phải thử nhiều cách khác nhau để có thể xây dựng được mô hinh tốt nhất. 
 
-### Decide on a training method
+### Huấn luyện mô hình
 
-Depending on your question and the nature of your data, you will choose a method to train it. Stepping through [Scikit-learn's documentation](https://scikit-learn.org/stable/user_guide.html) - which we use in this course - you can explore many ways to train a model. Depending on your experience, you might have to try several different methods to build the best model. You are likely to go through a process whereby data scientists evaluate the performance of a model by feeding it unseen data, checking for accuracy, bias, and other quality-degrading issues, and selecting the most appropriate training method for the task at hand.
+Với dữ liệu có sẵn, bạn đã sẵn sàng 'khớp' (fit) nó để tạo mô hình. Bạn sẽ nhận thấy rằng trong nhiều thư viện học máy, bạn sẽ tìm thấy mã 'model.fit' - đó là lúc bạn gửi biến đặc trưng của dữ liệu dưới dạng một mảng các giá trị (thường là 'X') và một biến mục tiêu (thường là 'y').
 
-### Train a model
+### Đánh giá mô hình
 
-Armed with your training data, you are ready to 'fit' it to create a model. You will notice that in many ML libraries you will find the code 'model.fit' - it is at this time that you send in your feature variable as an array of values (usually 'X') and a target variable (usually 'y').
+Sau khi quá trình đào tạo hoàn tất (có thể mất nhiều lần vòng lặp hoặc 'epoch' để đào tạo một mô hình lớn), bạn có thể đánh giá chất lượng của mô hình bằng cách sử dụng tập dữ liệu thử nghiệp. Tập này là tập con của bộ dữ liệu gốc mà mô hình sử dụng trước đó. Bạn có thể in ra bảng số liệu về chất lượng mô hình của mình.
 
-### Evaluate the model
+🎓 **Độ khớp mô hình (Model fitting)**
 
-Once the training process is complete (it can take many iterations, or 'epochs', to train a large model), you will be able to evaluate the model's quality by using test data to gauge its performance. This data is a subset of the original data that the model has not previously analyzed. You can print out a table of metrics about your model's quality.
+Trong bối cảnh học máy, độ khớp mô hình đề cập đến độ chính xác của chức năng cơ bản của mô hình khi nó cố gắng phân tích dữ liệu mà nó không quen thuộc.
 
-🎓 **Model fitting**
+🎓 **Chưa khớp (underfitting)** và **quá khớp (overfitting)** là những vấn đề phổ biến làm giảm chất lượng của mô hình.
 
-In the context of machine learning, model fitting refers to the accuracy of the model's underlying function as it attempts to analyze data with which it is not familiar.
+Quá khớp xảy ra khi mô hình học quá nhiều từ dữ liệu đào tạo, bao gồm cả nhiễu và chi tiết không cần thiết. Kết quả là mô hình sẽ hoạt động rất tốt trên dữ liệu đào tạo nhưng không thể tổng quát hóa tốt trên dữ liệu chưa từng gặp (dữ liệu kiểm thử). Điều này giống như một sinh viên học thuộc lòng tất cả các câu hỏi trong đề thi mẫu nhưng không thể giải quyết được khi gặp câu hỏi mới trong đề thi thật.
 
-🎓 **Underfitting** and **overfitting** are common problems that degrade the quality of the model, as the model fits either not well enough or too well. This causes the model to make predictions either too closely aligned or too loosely aligned with its training data. An overfit model predicts training data too well because it has learned the data's details and noise too well. An underfit model is not accurate as it can neither accurately analyze its training data nor data it has not yet 'seen'.
+Chưa khớp xảy ra khi mô hình chưa học đủ từ dữ liệu đào tạo, không thể nắm bắt được mối quan hệ giữa các đặc trưng và mục tiêu. Kết quả là mô hình sẽ hoạt động kém cả trên dữ liệu đào tạo và dữ liệu kiểm thử. Điều này giống như một sinh viên không học đủ kiến thức để giải quyết các câu hỏi trong đề thi. 
 
-![overfitting model](images/overfitting.png)
-> Infographic by [Jen Looper](https://twitter.com/jenlooper)
+![mô hình quá khớp](images/overfitting.png)
+> Hình ảnh của [Jen Looper](https://twitter.com/jenlooper)
 
-## Parameter tuning
+## Điều chỉnh tham số
 
-Once your initial training is complete, observe the quality of the model and consider improving it by tweaking its 'hyperparameters'. Read more about the process [in the documentation](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-tune-hyperparameters?WT.mc_id=academic-77952-leestott).
+Sau khi quá trình huấn luyện ban đầu của bạn hoàn tất, hãy quan sát chất lượng của mô hình và xem xét cải thiện bằng cách điều chỉnh 'siêu tham số' của nó. Đọc thêm về [trong tài liệu](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-tune-hyperparameters?WT.mc_id=academic-77952-leestott).
 
-## Prediction
+## Dự đoán
 
-This is the moment where you can use completely new data to test your model's accuracy. In an 'applied' ML setting, where you are building web assets to use the model in production, this process might involve gathering user input (a button press, for example) to set a variable and send it to the model for inference, or evaluation.
-
-In these lessons, you will discover how to use these steps to prepare, build, test, evaluate, and predict - all the gestures of a data scientist and more, as you progress in your journey to become a 'full stack' ML engineer.
-
+Đây là thời điểm bạn có thể dùng dữ liệu hoàn toàn mới để kiểm tra độ chính xác của mô hình, hoặc đưa mô hình vào ứng dụng thực tế. 
 ---
-
-## 🚀Challenge
-
-Draw a flow chart reflecting the steps of a ML practitioner. Where do you see yourself right now in the process? Where do you predict you will find difficulty? What seems easy to you?
-
-## [Post-lecture quiz](https://gray-sand-07a10f403.1.azurestaticapps.net/quiz/8/)
-
-## Review & Self Study
-
-Search online for interviews with data scientists who discuss their daily work. Here is [one](https://www.youtube.com/watch?v=Z3IjgbbCEfs).
-
-## Assignment
-
-[Interview a data scientist](assignment.md)

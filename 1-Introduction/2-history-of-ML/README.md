@@ -1,150 +1,132 @@
-# History of machine learning
+# Lịch sử học máy
 
-![Summary of History of machine learning in a sketchnote](../../sketchnotes/ml-history.png)
-> Sketchnote by [Tomomi Imura](https://www.twitter.com/girlie_mac)
+![Lịch sử học máy trong một trang giấy](../../sketchnotes/ml-history.png)
+> Tác giả : [Tomomi Imura](https://www.twitter.com/girlie_mac)
 
-## [Pre-lecture quiz](https://gray-sand-07a10f403.1.azurestaticapps.net/quiz/3/)
+## [Quiz khởi động (tiếng Anh)](https://gray-sand-07a10f403.1.azurestaticapps.net/quiz/3/)
 
 ---
 
 [![ML for beginners - History of Machine Learning](https://img.youtube.com/vi/N6wxM4wZ7V0/0.jpg)](https://youtu.be/N6wxM4wZ7V0 "ML for beginners - History of Machine Learning")
 
-> 🎥 Click the image above for a short video working through this lesson.
+> 🎥 Click ảnh trên để xem video bài học (tiếng Anh).
 
-In this lesson, we will walk through the major milestones in the history of machine learning and artificial intelligence.
+Trong bài học này, chúng ta sẽ điểm qua các cột mốc quan trọng trong lịch sử học máy và trí tuệ nhân tạo (AI).
 
-The history of artificial intelligence (AI) as a field is intertwined with the history of machine learning, as the algorithms and computational advances that underpin ML fed into the development of AI. It is useful to remember that, while these fields as distinct areas of inquiry began to crystallize in the 1950s, important [algorithmic, statistical, mathematical, computational and technical discoveries](https://wikipedia.org/wiki/Timeline_of_machine_learning) predated and overlapped this era. In fact, people have been thinking about these questions for [hundreds of years](https://wikipedia.org/wiki/History_of_artificial_intelligence): this article discusses the historical intellectual underpinnings of the idea of a 'thinking machine.'
-
----
-## Notable discoveries
-
-- 1763, 1812 [Bayes Theorem](https://wikipedia.org/wiki/Bayes%27_theorem) and its predecessors. This theorem and its applications underlie inference, describing the probability of an event occurring based on prior knowledge.
-- 1805 [Least Square Theory](https://wikipedia.org/wiki/Least_squares) by French mathematician Adrien-Marie Legendre. This theory, which you will learn about  in our Regression unit, helps in data fitting.
-- 1913 [Markov Chains](https://wikipedia.org/wiki/Markov_chain), named after Russian mathematician Andrey Markov, is used to describe a sequence of possible events based on a previous state.
-- 1957 [Perceptron](https://wikipedia.org/wiki/Perceptron) is a type of linear classifier invented by American psychologist Frank Rosenblatt that underlies advances in deep learning.
+Lịch sử của AI gắn liền với lịch sử học máy. Mặc dù những lĩnh vực này bắt đầu hình thành vào những năm 1950, nhưng [những khám phá quan trọng về thuật toán, thống kê, toán học, và kỹ thuật](https://wikipedia.org/wiki/Timeline_of_machine_learning) đã có từ trước. 
 
 ---
+## Những khám phá quan trọng
 
-- 1967 [Nearest Neighbor](https://wikipedia.org/wiki/Nearest_neighbor) is an algorithm originally designed to map routes. In an ML context it is used to  detect patterns.
-- 1970 [Backpropagation](https://wikipedia.org/wiki/Backpropagation) is used to train [feedforward neural networks](https://wikipedia.org/wiki/Feedforward_neural_network).
-- 1982 [Recurrent Neural Networks](https://wikipedia.org/wiki/Recurrent_neural_network) are artificial neural networks derived from feedforward neural networks that create temporal graphs.
-
-✅ Do a little research. What other dates stand out as pivotal in the history of ML and AI?
-
----
-## 1950: Machines that think
-
-Alan Turing, a truly remarkable person who was voted [by the public in 2019](https://wikipedia.org/wiki/Icons:_The_Greatest_Person_of_the_20th_Century) as the greatest scientist of the 20th century, is credited as helping to lay the foundation for the concept of a 'machine that can think.' He grappled with naysayers and his own need for empirical evidence of this concept in part by creating the [Turing Test](https://www.bbc.com/news/technology-18475646), which you will explore in our NLP lessons.
-
----
-## 1956: Dartmouth Summer Research Project
-
-"The Dartmouth Summer Research Project on artificial intelligence was a seminal event for artificial intelligence as a field," and it was here that the term 'artificial intelligence' was coined ([source](https://250.dartmouth.edu/highlights/artificial-intelligence-ai-coined-dartmouth)).
-
-> Every aspect of learning or any other feature of intelligence can in principle be so precisely described that a machine can be made to simulate it.
+- 1763, 1812 [Định lý Bayes](https://wikipedia.org/wiki/Bayes%27_theorem)
+- 1805 [Phương pháp bình phương tối thiểu](https://wikipedia.org/wiki/Least_squares) 
+- 1913 [Chuỗi Markov](https://wikipedia.org/wiki/Markov_chain)
+- 1957 [Thuật toán Perceptron](https://wikipedia.org/wiki/Perceptron)
 
 ---
 
-The lead researcher, mathematics professor John McCarthy, hoped "to proceed on the basis of the conjecture that every aspect of learning or any other feature of intelligence can in principle be so precisely described that a machine can be made to simulate it." The participants included another luminary in the field, Marvin Minsky.
+- 1967 [Thuật toán Nearest Neighbor](https://wikipedia.org/wiki/Nearest_neighbor) 
+- 1970 [Phương pháp truyền ngược](https://wikipedia.org/wiki/Backpropagation) để huấn luyện [mạng thần kinh truyền thẳng](https://wikipedia.org/wiki/Feedforward_neural_network).
+- 1982 [Mạng thần kinh hồi quy](https://wikipedia.org/wiki/Recurrent_neural_network) 
 
-The workshop is credited with having initiated and encouraged several discussions including "the rise of symbolic methods, systems focussed on limited domains (early expert systems), and deductive systems versus inductive systems." ([source](https://wikipedia.org/wiki/Dartmouth_workshop)).
-
----
-## 1956 - 1974: "The golden years"
-
-From the 1950s through the mid '70s, optimism ran high in the hope that AI could solve many problems. In 1967, Marvin Minsky stated confidently that "Within a generation ... the problem of creating 'artificial intelligence' will substantially be solved." (Minsky, Marvin (1967), Computation: Finite and Infinite Machines, Englewood Cliffs, N.J.: Prentice-Hall)
-
-natural language processing research flourished, search was refined and made more powerful, and the concept of 'micro-worlds' was created, where simple tasks were completed using plain language instructions.
+✅ Tìm hiểu thêm các cột mốc quan trọng khác trong lịch sử của AI và học máy
 
 ---
+## 1950: Máy móc biết tư duy
 
-Research was well funded by government agencies, advances were made in computation and algorithms, and prototypes of intelligent machines were built. Some of these machines include:
+Alan Turing được ghi nhận là người đặt nền móng cho khái niệm về máy móc biết tư duy. Ông cũng đã tạo ra [Phép thử Turing](https://www.bbc.com/news/technology-18475646), bài kiểm tra trình độ AI, mà chúng ta sẽ tìm hiểu trong chương xử lý ngôn ngữ tự nhiên
 
-* [Shakey the robot](https://wikipedia.org/wiki/Shakey_the_robot), who could maneuver and decide how to perform tasks 'intelligently'.
+---
+## 1956: Dự án nghiên cứu mùa hè Dartmouth
 
-    ![Shakey, an intelligent robot](images/shakey.jpg)
-    > Shakey in 1972
+"Dự án Nghiên cứu Mùa hè của Dartmouth là một sự kiện quan trọng đối với lĩnh vực trí tuệ nhân tạo và chính tại đây thuật ngữ 'trí tuệ nhân tạo' đã được đặt ra ([nguồn](https://250.dartmouth.edu/highlights /artificial-intelligence-ai-coined-dartmouth)).
+
+> Về nguyên tắc, mọi khía cạnh của việc học tập hoặc bất kỳ đặc điểm nào khác của trí thông minh đều có thể được mô tả chính xác đến mức có thể tạo ra một chiếc máy để mô phỏng nó.
 
 ---
 
-* Eliza, an early 'chatterbot', could converse with people and act as a primitive 'therapist'. You'll learn more about Eliza in the NLP lessons.
+Trưởng nhóm nghiên cứu, giáo sư toán học John McCarthy, phỏng đoán rằng mọi khía cạnh của việc học hoặc bất kỳ đặc điểm nào khác của trí thông minh về nguyên tắc có thể được mô tả chính xác đến mức có thể tạo ra một cỗ máy để mô phỏng nó. Những người tham gia cũng bao gồm một ngôi sao sáng khác trong lĩnh vực này, Marvin Minsky.
 
-    ![Eliza, a bot](images/eliza.png)
-    > A version of Eliza, a chatbot
+Hội thảo được ghi nhận là đã khởi xướng và khuyến khích một số cuộc thảo luận bao gồm "sự nổi lên của các phương pháp biểu tượng, các hệ thống tập trung vào các lĩnh vực hạn chế (các hệ thống chuyên gia ban đầu) và các hệ thống suy diễn so với các hệ thống quy nạp." ([nguồn](https://wikipedia.org/wiki/Dartmouth_workshop)).
+
+---
+## 1956 - 1974: "Những năm vàng"
+
+Từ những năm 1950 đến giữa những năm 70, sự lạc quan tăng cao rằng AI có thể giải quyết được nhiều vấn đề. Năm 1967, Marvin Minsky tự tin tuyên bố rằng "Trong vòng một thế hệ... vấn đề tạo ra 'trí tuệ nhân tạo' về cơ bản sẽ được giải quyết." (Minsky, Marvin (1967), Computation: Finite and Infinite Machines, Englewood Cliffs, N.J.: Prentice-Hall)
+
+Nghiên cứu xử lý ngôn ngữ tự nhiên phát triển mạnh mẽ, tìm kiếm được cải tiến và trở nên mạnh mẽ hơn, đồng thời khái niệm 'thế giới vi mô' được tạo ra, nơi các tác vụ đơn giản được hoàn thành bằng cách sử dụng các hướng dẫn bằng ngôn ngữ đơn giản.
 
 ---
 
-* "Blocks world" was an example of a micro-world where blocks could be stacked and sorted, and experiments in teaching machines to make decisions could be tested. Advances built with libraries such as [SHRDLU](https://wikipedia.org/wiki/SHRDLU) helped propel language processing forward.
+Một số phát minh :
 
-    [![blocks world with SHRDLU](https://img.youtube.com/vi/QAJz4YKUwqw/0.jpg)](https://www.youtube.com/watch?v=QAJz4YKUwqw "blocks world with SHRDLU")
+* [Robot Shakey](https://wikipedia.org/wiki/Shakey_the_robot) có thể quyết định cách thực hiện nhiệm vụ một cách 'thông minh'.
 
-    > 🎥 Click the image above for a video: Blocks world with SHRDLU
-
----
-## 1974 - 1980: "AI Winter"
-
-By the mid 1970s, it had become apparent that the complexity of making 'intelligent machines' had been understated and that its promise, given the available compute power, had been overblown. Funding dried up and confidence in the field slowed. Some issues that impacted confidence included:
----
-- **Limitations**. Compute power was too limited.
-- **Combinatorial explosion**. The amount of parameters needed to be trained grew exponentially as more was asked of computers, without a parallel evolution of compute power and capability.
-- **Paucity of data**. There was a paucity of data that hindered the process of testing, developing, and refining algorithms.
-- **Are we asking the right questions?**. The very questions that were being asked began to be questioned. Researchers began to field criticism about their approaches:
-  - Turing tests came into question by means, among other ideas, of the 'chinese room theory' which posited that, "programming a digital computer may make it appear to understand language but could not produce real understanding." ([source](https://plato.stanford.edu/entries/chinese-room/))
-  - The ethics of introducing artificial intelligences such as the "therapist" ELIZA into society was challenged.
+     ![Shakey, robot thông minh](images/shakey.jpg)
+     > Shakey năm 1972
 
 ---
 
-At the same time, various AI schools of thought began to form. A dichotomy was established between ["scruffy" vs. "neat AI"](https://wikipedia.org/wiki/Neats_and_scruffies) practices. _Scruffy_ labs tweaked programs for hours until they had the desired results. _Neat_ labs "focused on logic and formal problem solving". ELIZA and SHRDLU were well-known _scruffy_ systems. In the 1980s, as demand emerged to make ML systems reproducible, the _neat_ approach gradually took the forefront as its results are more explainable.
+* Eliza, một 'chatbot' thời kỳ đầu, có thể trò chuyện với mọi người như một 'nhà trị liệu'. Bạn sẽ tìm hiểu thêm về Eliza trong chương xử lý ngôn ngữ tự nhiên.
+
+     ![Eliza, một robot](images/eliza.png)
+     > Một phiên bản của Eliza, một chatbot
 
 ---
-## 1980s Expert systems
 
-As the field grew, its benefit to business became clearer, and in the 1980s so did the proliferation of 'expert systems'. "Expert systems were among the first truly successful forms of artificial intelligence (AI) software." ([source](https://wikipedia.org/wiki/Expert_system)).
+* "Thế giới khối" là một ví dụ về thế giới vi mô nơi các khối có thể được xếp chồng lên nhau và sắp xếp, đồng thời có thể thử nghiệm các thí nghiệm trong máy dạy học để đưa ra quyết định. Những tiến bộ được xây dựng bằng các thư viện như [SHRDLU](https://wikipedia.org/wiki/SHRDLU) đã giúp thúc đẩy quá trình xử lý ngôn ngữ ngày càng phát triển.
 
-This type of system is actually _hybrid_, consisting partially of a rules engine defining business requirements, and an inference engine that leveraged the rules system to deduce new facts.
+     [![Blocks world with SHRDLU](https://img.youtube.com/vi/QAJz4YKUwqw/0.jpg)](https://www.youtube.com/watch?v=QAJz4YKUwqw "Blocks world with SHRDLU" )
 
-This era also saw increasing attention paid to neural networks.
+     > 🎥 Nhấp vào hình trên để xem video: Blocks world with SHRDLU
 
 ---
-## 1987 - 1993: AI 'Chill'
+## 1974 - 1980: "Mùa đông"
 
-The proliferation of specialized expert systems hardware had the unfortunate effect of becoming too specialized. The rise of personal computers also competed with these large, specialized, centralized systems. The democratization of computing had begun, and it eventually paved the way for the modern explosion of big data.
+Sự phát triển của AI chậm lại. Một số lý do :
+---
+- **Hạn chế**. Sức mạnh tính toán của máy tính hạn chế, trong khi số lượng tham số cần được huấn luyện tăng vọt
+- **Thiếu hụt dữ liệu**. Sự thiếu hụt dữ liệu đã cản trở việc thử nghiệm, tinh chỉnh và phát triển các thuật toán
+- **Một số vấn đề khác**. 
+  - Phép thử Turing bị nghi vấn, thuyết căn phòng tiếng Trung([source](https://plato.stanford.edu/entries/chinese-room/)) cho rằng dù AI không thể hiểu được vấn đề, dù nó khiến con người tưởng rằng nó hiểu được
+  - ELIZA bị thách thức về mặt đạo đức.
+
+---
+## Thập niên 1980 : hệ thống chuyên gia
+
+Khi lĩnh vực này phát triển, lợi ích của nó đối với kinh doanh trở nên rõ ràng hơn, và trong những năm 1980, sự phát triển của 'hệ thống chuyên gia' cũng tăng theo. "Hệ thống chuyên gia là một trong những dạng phần mềm trí tuệ nhân tạo (AI) thực sự thành công đầu tiên." ([nguồn](https://wikipedia.org/wiki/Expert_system)).
+
+Loại hệ thống này thực sự là _hybrid_, bao gồm một engine quy tắc xác định các yêu cầu kinh doanh và engine suy luận tận dụng hệ thống quy tắc để suy ra các dữ kiện mới.
+
+Thời đại này cũng chứng kiến ​​sự chú ý ngày càng tăng đối với mạng lưới thần kinh.
+
+---
+## 1987 - 1993: 
+
+Máy tính cá nhân dần phổ biến, mở đường cho sự bùng nổ của dữ liệu lớn
 
 ---
 ## 1993 - 2011
 
-This epoch saw a new era for ML and AI to be able to solve some of the problems that had been caused earlier by the lack of data and compute power. The amount of data began to rapidly increase and become more widely available, for better and for worse, especially with the advent of the smartphone around 2007. Compute power expanded exponentially, and algorithms evolved alongside. The field began to gain maturity as the freewheeling days of the past began to crystallize into a true discipline.
+Sức mạnh tính toán và lượng dữ liệu tăng mạnh, dẫn đến sự phát triển nhanh chóng của AI và học máy
 
 ---
 ## Now
 
-Today machine learning and AI touch almost every part of our lives. This era calls for careful understanding of the risks and potentials effects of these algorithms on human lives. As Microsoft's Brad Smith has stated, "Information technology raises issues that go to the heart of fundamental human-rights protections like privacy and freedom of expression. These issues heighten responsibility for tech companies that create these products. In our view, they also call for thoughtful government regulation and for the development of norms around acceptable uses" ([source](https://www.technologyreview.com/2019/12/18/102365/the-future-of-ais-impact-on-society/)).
-
+Ngày nay học máy và AI chạm tới hầu hết mọi lĩnh vực trong cuộc sống của chúng ta. Thời đại này đòi hỏi sự hiểu biết cẩn thận về những rủi ro và tác động tiềm tàng của các thuật toán này đối với cuộc sống con người. Như Brad Smith của Microsoft đã tuyên bố: "Công nghệ thông tin đặt ra những vấn đề trọng tâm trong việc bảo vệ nhân quyền cơ bản như quyền riêng tư và tự do ngôn luận. Những vấn đề này nâng cao trách nhiệm đối với các công ty công nghệ tạo ra những sản phẩm này. 
 ---
 
-It remains to be seen what the future holds, but it is important to understand these computer systems and the software and algorithms that they run. We hope that this curriculum will help you to gain a better understanding so that you can decide for yourself.
+Vẫn còn phải xem tương lai sẽ ra sao, nhưng điều quan trọng là phải hiểu những hệ thống máy tính này cũng như phần mềm và thuật toán mà chúng chạy. Chúng tôi hy vọng rằng chương trình giảng dạy này sẽ giúp bạn hiểu rõ hơn để có thể tự quyết định.
+
 
 [![The history of deep learning](https://img.youtube.com/vi/mTtDfKgLm54/0.jpg)](https://www.youtube.com/watch?v=mTtDfKgLm54 "The history of deep learning")
-> 🎥 Click the image above for a video: Yann LeCun discusses the history of deep learning in this lecture
-
----
-## 🚀Challenge
-
-Dig into one of these historical moments and learn more about the people behind them. There are fascinating characters, and no scientific discovery was ever created in a cultural vacuum. What do you discover?
-
-## [Post-lecture quiz](https://gray-sand-07a10f403.1.azurestaticapps.net/quiz/4/)
-
----
-## Review & Self Study
-
-Here are items to watch and listen to:
-
-[This podcast where Amy Boyd discusses the evolution of AI](http://runasradio.com/Shows/Show/739)
-
-[![The history of AI by Amy Boyd](https://img.youtube.com/vi/EJt3_bFYKss/0.jpg)](https://www.youtube.com/watch?v=EJt3_bFYKss "The history of AI by Amy Boyd")
-
+> 🎥 Click ảnh trên để xem video về lịch sử của học sâu
 ---
 
-## Assignment
+## Ôn luyện và học thêm
 
-[Create a timeline](assignment.md)
+[Podcast Amy Boyd nói về sự tiến hóa của AI](http://runasradio.com/Shows/Show/739)
+
+[![Lịch sử của AI bởi Amy Boyd](https://img.youtube.com/vi/EJt3_bFYKss/0.jpg)](https://www.youtube.com/watch?v=EJt3_bFYKss "The history of AI by Amy Boyd")
+
+---

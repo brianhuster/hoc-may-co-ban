@@ -1,16 +1,17 @@
-# Introduction to machine learning
+# Giới thiệu về học máy
 
-In this section of the curriculum, you will be introduced to the base concepts underlying the field of machine learning, what it is, and learn about its history and the techniques researchers use to work with it.  Let's explore this new world of ML together!
+Trong chương này, bạn sẽ học khái niệm, lịch sử và các kỹ thuật trong học máy
 
 ![globe](images/globe.jpg)
-> Photo by <a href="https://unsplash.com/@bill_oxford?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Bill Oxford</a> on <a href="https://unsplash.com/s/photos/globe?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+> Ảnh : <a href="https://unsplash.com/@bill_oxford?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Bill Oxford</a> trên <a href="https://unsplash.com/s/photos/globe?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
-### Lessons
+### Bài học
 
-1. [Introduction to machine learning](1-intro-to-ML/README.md)
-1. [The History of machine learning and AI](2-history-of-ML/README.md)
-1. [Fairness and machine learning](3-fairness/README.md)
-1. [Techniques of machine learning](4-techniques-of-ML/README.md)
+1. [Giới thiệu học máy](1-intro-to-ML/README.md)
+1. [Lịch sử học máy và AI](2-history-of-ML/README.md)
+1. [Công bằng trong học máy](3-fairness/README.md)
+1. [Các kỹ thuật học máy](4-techniques-of-ML/README.md)
+
 ### Credits
 
 "Introduction to Machine Learning" was written with ♥️ by a team of folks including [Muhammad Sakib Khan Inan](https://twitter.com/Sakibinan), [Ornella Altunyan](https://twitter.com/ornelladotcom) and [Jen Looper](https://twitter.com/jenlooper)
